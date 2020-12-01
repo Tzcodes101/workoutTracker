@@ -21,10 +21,13 @@ router.post("/api/workouts", (req, res) => {
 //router.put(/api/workouts/:id)
 router.put("/api/workouts/:id", (req, res) => {
     Workout.findByIdAndUpdate(
-        params.id,
-        { $push: { exercises: body } },
+        req.params.id,
+        { $push: { exercises: req.body } },
         { new: true, runValidators: true }
-    );
+    )
+    .then(dbWorkout => {
+        res.json(dbWorkout);
+    });
 });
 
 //router.get(/api/workouts)

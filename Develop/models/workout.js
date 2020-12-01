@@ -28,19 +28,19 @@ workoutSchema = new Schema(
                 },
                 weight: {
                     type: Number,
-                    required: "Enter exercise weight"
+                    //required: "Enter exercise weight"
                 },
                 reps: {
                     type: Number,
-                    required: "Enter the number of sets"
+                    //required: "Enter the number of sets"
                 },
                 sets: {
                     type: Number,
-                    required: "Enter the number of reps"
+                    //required: "Enter the number of reps"
                 },
                 distance: {
                     type: Number,
-                    required: "Enter the distance of the exercise"
+                    //required: "Enter the distance of the exercise"
                 }
 
             }
@@ -54,7 +54,7 @@ workoutSchema = new Schema(
     );
 
 //workoutSchema.virtual; starting wtih 0, give total amount of exercises 
-workoutSchema.virtual("totalDuration").get(() => {
+workoutSchema.virtual("totalDuration").get(function() {
     return this.exercises.reduce((total, exercises) => {
         return total + exercises.duration;
     }, 0);
