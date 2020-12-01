@@ -17,12 +17,12 @@ app.use(express.json());
 app.use(express.static("public"));
 
 //mongoose.connect
-mongoose.connect(process.env.MONGO_URI || "mongodb://localhost/populatedb", { useNewUrlParser: true, useFindAndModify: false }); 
+mongoose.connect(process.env.MONGO_URI || "mongodb://localhost/workoutdb", { useNewUrlParser: true, useFindAndModify: false }); 
 
 
 //routes
-app.use(require("./routes/api"));
-app.use(require("./routes/view"));
+app.use(require("./routes/api.js"));
+app.use(require("./routes/view.js"));
 
 //app.listen
 app.listen(PORT, () => {
