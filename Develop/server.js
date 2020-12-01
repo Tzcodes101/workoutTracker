@@ -1,18 +1,30 @@
 //Dependencies
-    //express, mongoose, morgan, apiRoutes, viewRoutes
+const express = require("express");
+const mongoose = require("mongoose");
+const logger = require("morgan");
+// const apiRoutes = require("./routes/api");
+// const viewRoutes = require("./routes/view");
 
 //variables
-    //port, require model, app
+const PORT = process.env.PORT || 3000;
+// const db = require("./models");
+const app = express();
 
 //app.use
-    //logger("dev"), express.urlencoded, express.json, express.static
+app.use(logger("dev"));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static("public"));
 
 //mongoose.connect
-    //process.env.MONGO_URI or "mongodb://localhost/populatedb", { useNewUrlParser: true, useFindAndModify: false }
+mongoose.connect(process.env.MONGO_URI || "mongodb://localhost/populatedb", { useNewUrlParser: true, useFindAndModify: false }); 
 
 
 //routes
-    //app.use apiRoutes
-    //app.use viewRoutes
+app.use(require("./routes/api"));
+app.use(require("./routes/view"));
 
 //app.listen
+app.listen(PORT, () => {
+    console.log(`App listening on ${PORT}!`);
+});
