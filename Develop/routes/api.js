@@ -51,16 +51,16 @@ router.get("/api/workouts/range", (req, res) => {
 });
 
 //router.delete(/api/workouts)
-router.delete("api/workouts/:id", (req, res) => {
-    Workout.deleteOne({ _id: req.params.id}, (err, data) => {
-        if(err) {
-            console.log(err);
-        } 
-        else {
-            res.json(data);
-            console.log("Workout deleted");
-        };
-    });
-});
-//export router
+// router.delete("api/workouts", ({ body} , res) => {
+//     Workout.deleteOne({ body }, (err, data) => {
+//         if(err) {
+//             console.log(err);
+//         } 
+//         else {
+//             res.json(data);
+//             console.log("Workout deleted");
+//         };
+//     });
+// });
+// //export router
 module.exports = router;
