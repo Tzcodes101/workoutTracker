@@ -25,9 +25,9 @@ router.put("/api/workouts/:id", (req, res) => {
         { $push: { exercises: req.body } },
         { new: true, runValidators: true }
     )
-    .then(dbWorkout => {
-        res.json(dbWorkout);
-    });
+        .then(dbWorkout => {
+            res.json(dbWorkout);
+        });
 });
 
 //router.get(/api/workouts)
@@ -43,13 +43,14 @@ router.get("/api/workouts", (req, res) => {
 
 //router.get(/api/workouts/range)
 router.get("/api/workouts/range", (req, res) => {
-    Workout.find({highVal: { $lte: 8 } }, (err, data) =>{
-        if(err) {
+    Workout.find({}).limit(8)
+        .then(dbWorkouts => {
+        res.json(dbWorkouts);
+    })
+    .catch(err => {
+        if (err) {
             console.log(err);
-        } 
-        else {
-            res.json(data);
-        };
+        }
     });
 });
 
