@@ -24,7 +24,7 @@ This application allows a user to reach their fitness goals more quickly by trac
 
 
 ## Usage
-A user can access this project from this link: https://evening-harbor-99452.herokuapp.com/burgers.
+A user can access this project from this link: https://tz-workout-tracker.herokuapp.com/
 
 ## Languages
 The languages and frameworks used in this project include:
