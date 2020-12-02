@@ -45,13 +45,23 @@ router.get("/api/workouts", (req, res) => {
 router.get("/api/workouts/range", (req, res) => {
     Workout.find({}).limit(8)
         .then(dbWorkouts => {
-        res.json(dbWorkouts);
-    })
-    .catch(err => {
-        if (err) {
-            console.log(err);
-        }
-    });
+            res.json(dbWorkouts);
+        })
+        .catch(err => {
+            if (err) {
+                console.log(err);
+            }
+        });
+});
+
+router.delete("/api/workouts", ({ body }, res) => {
+    Workout.findByIdAndDelete(body.id)
+        .then(() => {
+            res.json(true);
+        })
+        .catch(err => {
+            res.json(err);
+        });
 });
 
 module.exports = router;
