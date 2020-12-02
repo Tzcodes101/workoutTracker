@@ -54,14 +54,5 @@ router.get("/api/workouts/range", (req, res) => {
         });
 });
 
-router.delete("/api/workouts", ({ body }, res) => {
-    Workout.findByIdAndDelete(body.id)
-        .then(() => {
-            res.json(true);
-        })
-        .catch(err => {
-            res.json(err);
-        });
-});
 
 module.exports = router;
