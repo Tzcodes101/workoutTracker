@@ -31,6 +31,8 @@ The languages and frameworks used in this project include:
 - Javascript
 - Node.js
 - Mongoose
+- Heroku
+- Mongo Atlas
 
 ## License
 ![badge](https://img.shields.io/badge/license-ISC-brightgreen)
