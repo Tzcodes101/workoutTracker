@@ -7,7 +7,7 @@
 - Link to GitHub repository: https://github.com/Tzcodes101/workoutTracker
 
 ## Description
-This application allows a user to reach their fitness goals more quickly by tracking their workouts. A user can view, create, and log multiple exercides on a given day. The user can input the type, weight, name, sets, reps, duration, and distance (for cardio) of an exercise.
+This application allows a user to reach their fitness goals more quickly by tracking their workouts. A user can view, create, and log multiple exercises on a given day. The user can input the type, weight, name, sets, reps, duration, and distance (for cardio) of an exercise.
 
 ![Image of application](./assets/fitnessTracker1Resize.jpg)
 
