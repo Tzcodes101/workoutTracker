@@ -6,7 +6,7 @@ const logger = require("morgan");
 // const viewRoutes = require("./routes/view");
 
 //variables
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 // const db = require("./models");
 const app = express();
 
